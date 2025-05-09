@@ -1,0 +1,15 @@
+{% extends "common.html" %}
+{% block title %}Add to List{% endblock title %}
+
+{% block content %}
+
+<div class="container col-md-3">
+   <h3 class="text-center"> Add Recipe</h3>
+<form method="post" enctype="multipart/form-data">
+   {% csrf_token %}
+   {{form}}
+<button class="btn btn-primary" type="submit"> Add </button>
+</form>
+</div>
+<br>
+{% endblock content %}

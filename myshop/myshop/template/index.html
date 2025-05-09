@@ -1,0 +1,125 @@
+{% extends "common.html" %}
+{% block title %}Home{% endblock title %}
+{% load static %}
+{% block content %}
+
+<div id="heroimage" class="carousel slide"  data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroimage" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroimage" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#heroimage" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active c-item ">
+      <img src="{% static "images\generate image of  a native african dish.png" %}" class="d-block w-100 c-image " alt="...">
+      <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+          <p class="mt-5 fs-3 text-uppercase">Welcome to</p> <h2 class="display-1 fw-bolder text-capitalize">TastyDiary </h2>
+          <p class="">Delicious notes from your kitchen to ours.</p>
+          <a class="btn btn-primary px-4 py-2 fs-5 mt-5" href="{% url "add-product" %}" > Add Recipe</a> 
+        </div>
+    </div>
+    <div class="carousel-item c-item">
+      <img src="{% static "images\waffles on a plate, with syrup and toppings_.png" %}" class="d-block w-100 c-image" alt="...">
+      <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+        <p class="mt-5 fs-3 text-uppercase text-black">Welcome to</p> <h2 class="display-1 fw-bolder text-capitalize text-black">TastyDiary</h2>
+        <p class= "text-black">Delicious notes from your kitchen to ours.</p>
+        <a class="btn btn-primary px-4 py-2 fs-5 mt-5" href="{% url "add-product" %}" > Add Recipe</a> 
+      </div>
+    </div>
+    <div class="carousel-item c-item">
+      <img src="{% static "images\smoothie in a glass cup with toppings.png" %}" class="d-block w-100 c-image" alt="...">
+      <div class="carousel-caption top-0 mt-4 d-none d-md-block">
+        <p class="mt-5 fs-3 text-uppercase text-black">Welcome to</p> <h2 class="display-1 fw-bolder text-capitalize text-black">TastyDiary</h2>
+        <p class= "text-black">Delicious notes from your kitchen to ours.!</p>
+        <a class="btn btn-primary px-4 py-2 fs-5 mt-5" href="{% url "add-product" %}" > Add Recipe</a> 
+      </div>
+          
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroimage" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroimage" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
+
+<section class="container my=5">
+<h3 class="text-center"> Your Recipes</h3>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <img src="{% static 'images\get an american popular food image.png' %}" class="card-img-top imgg" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Classics</h5>
+        <p class="card-text">Click to add a special meal you want us to try.</p>
+        <a href="{% url "add-payment" %}" class="btn btn-primary">Add</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card" >
+      <img src="{% static 'images\smoothie in a glass cup with toppings.png' %}" class="card-img-top imgg" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Drinks & Smoothies</h5>
+        <p class="card-text">Best drink combos, fruit mixups</p>
+        <a href="{% url "add-payment" %}" class="btn btn-primary">Add</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card" >
+      <img src="{% static 'images\Snacks.jpg' %}" class="card-img-top imgg" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Desserts and quick meals</h5>
+        <p class="card-text">Add a snack recipe, desert or quickfix.</p>
+        <a href="{% url "add-payment" %}" class="btn btn-primary">Add</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<section class="container my=5">
+  <h3 class="text-center">Our Recipes</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{% static 'images\food.jpg' %}" class="card-img-top imgg" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Recipe Post</h5>
+          <p class="card-text">Check out out top recipes we have made and can guarantee your satisfaction</p>
+          <a href="{% url "recipePost" %}" class="btn btn-primary">Read</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" >
+        <img src="{% static 'images\electronics.jpg' %}" class="card-img-top imgg" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Tips and Kitchen hacks</h5>
+          <p class="card-text">Includes helpful kitchen tips and cooking hacks</p>
+          <a href="{% url "tipspage" %}" class="btn btn-primary">Read</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" >
+        <img src="{% static 'images\logo.jpg' %}" class="card-img-top imgg" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Themed series/Meal plans</h5>
+          <p class="card-text">Includes: shopping list, prep tips, and daily recipes            .</p>
+          <a href="{% url "tipspage" %}" class="btn btn-primary">Read</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  
+   
+{% endblock content %}

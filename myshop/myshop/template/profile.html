@@ -1,0 +1,28 @@
+{% extends "common.html" %}
+{% block title %} Profile{% endblock title %}
+
+{% block content %}
+
+<div class="container col-md-4 p-3 my-4 mt-3 rounded shadow">
+    <h1 class="text-center">Profile Page</h1>
+    
+{% if profileInfo.profile_picture %}
+<img src="{{profileInfo.profile_picture.url}}" alt="image" height="50">
+{% else %}
+<img src="" alt="no image" height="50">
+ {% endif %}
+ 
+ <p><b>Name:</b> {{userInfo.first_name}} {{userInfo.last_name}} </p>
+    <p><b>Email:</b> {{userInfo.email}}</p>
+    <p><b>Gender:</b> {{profileInfo.gender}}</p>
+    <p><b>Bio:</b> {{profileInfo.bio}}</p>
+    <p><b>Phone Number:</b> {{profileInfo.phone_number}}</p>
+    <div class="text-center">
+        <a href="{% url 'edit_profile' userInfo.id %}" class="btn btn-primary">Edit</a>
+
+    </div>
+</div>
+
+
+
+{% endblock content %}

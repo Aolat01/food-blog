@@ -1,0 +1,19 @@
+{% extends "common.html" %}
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+<div class="container col-md-4 p-3 my-4 mt-4 rounded shadow">
+        <h2 class="text-center mb-4">Edit Profile</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{ userForm.as_p }}
+            {{ profileForm.as_p }}
+            <div class="d-grid mt-3 ">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+
+
+{% endblock content %}

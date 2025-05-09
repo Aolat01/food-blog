@@ -1,0 +1,71 @@
+{% extends "common.html" %}
+{% block title %}Shopping List{% endblock title %}
+
+{% block content %}
+   <div class="container">
+<h4>Here is your updated Recipe list!</h4>
+
+<table class="table my-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Date</th>
+        <th scope="col">Completed</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for myshop in myshops %}
+        <tr
+        {% if myshop.complete_payment %}
+            class ="opacity-50"
+        {% endif %}    
+        >
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{myshop.title}}</td>
+          <td>{{myshop.description}}</td>
+          <td>{{myshop.created_at}}</td>
+<td>
+          {% if myshop.complete_payment %}
+            <a href="{% url 'handle-complete' myshop.id %}" class="btn btn-success">Delivered</a>
+          {% else %}
+             <a href="{% url 'handle-complete' myshop.id %}" class="btn btn-warning">Pending</a>
+          {% endif %}
+</td>
+
+          <td><a href="{% url 'edit-myshop' myshop.id %}" class="btn btn-primary">Edit</a></td>
+          <td><a href="" class="btn btn-danger"
+             data-bs-toggle="modal" data-bs-target="#exampleModal_{{myshop.id}}">
+          Delete</a></td>
+ 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal_{{myshop.id}}" tabindex="-1" 
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete {{myshop.title}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete {{myshop.title}}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <a href="{% url 'delete-myshop' myshop.id %}" type="button" class="btn btn-primary">Yes</a>
+      </div>
+    </div>
+  </div>
+</div>
+          
+</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock content %}

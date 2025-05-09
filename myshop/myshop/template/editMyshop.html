@@ -1,0 +1,19 @@
+{% extends "common.html" %}
+{% block title %}Edit myshop{% endblock title %}
+
+{% block content %}
+   
+
+      <div class="container col-md-4 border border-primary py-2 my-5 ">
+        <h3 class="text-center">Edit Recipe</h3>
+        <form action="{% url 'edit-myshop' myshop.id %}" method="POST"> 
+          {% csrf_token %}
+            <input type="text" placeholder="Title" class="form-control mb-2" name="title" value="{{myshop.title}}">
+            <textarea name="description" id="" placeholder="Description" class="form-control mb-2">{{myshop.description}}</textarea>
+            
+            <button type="submit" class="btn btn-primary w-100"> Edit Recipe</button>
+        </form>
+    </div>
+
+
+    {% endblock content %}

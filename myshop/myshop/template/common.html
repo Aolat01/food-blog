@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyDiary</title>
+{% load static %}
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+  </head>
+
+<body>
+   
+    <nav class="navbar navbar-expand-lg bg-info">
+        <div class="container-fluid"> 
+          <div class=" d-flex">
+            <img src="{% static 'images\generate image of  a native african dish.png' %}" alt="Logo" width="32 " height="30">
+            <h5>TastyDiary</h5>
+          </div>
+
+            {%if request.user.is_authenticated%}
+           <span class="navbar-brand my-0  mb-2 ms-2 me-auto h1"><h5>Hello, {{request.user.first_name}} {{request.user.last_name}}</h5></span>  
+{%endif%}
+        </div>
+
+    <div class="collapse navbar-collapse me-5 container-fluid" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url "home" %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url "YourList" %}">Recipes</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url "aboutme" %}">Cooking class</a></li>
+             <li><a class="dropdown-item" href="{% url "aboutme" %}">About Me</a></li>
+          </ul>
+        </li>
+  {%if request.user.is_authenticated%}
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Page
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="{% url "profile" %}">Profile</a></li>
+       <li><a class="dropdown-item" href="{% url "password_change" %}">Change Password</a></li>
+      <li>
+        <form action= {% url "logout" %} method= "post">
+        {% csrf_token %}
+      <button class="dropdown-item btn btn-outline-primary">Logout</button>
+      </form> 
+    </li> 
+    </ul>
+  </li>
+    {% else %}
+    <div class="container-fluid   ms-5">
+      <div class="btn-group" role="group">
+        <a href= "{% url "signup" %}"class="btn btn-outline-primary">Signup</a>
+        <a href="{% url "login" %}" class="btn btn-outline-primary">Login</a>
+    </div>
+  </div>
+    {% endif %}
+</ul>
+</ul>
+</div>
+      </form>
+    </div>
+  </nav>
+</nav>
+
+{% block content  %}
+{% endblock content %}
+
+
+
+
+<footer>
+    <div class="card text-center">
+      <div class="card-header fw-bold">
+        24/7 ACCESS
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Work with me/Weekly Newsletter?</h5>
+        <p class="card-text">Want to collaborate, feature a recipe, or just say hi?
+           Let’s connect — aolatadepoju@gmail.com or DM me on Instagram @pejus_treat.</p>
+        <a href="#" class="btn btn-primary">ASK a QUESTION</a>
+      </div>
+      <div class="card-footer text-body-secondary">
+        +2348182112412
+      </div>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+  </html>

@@ -1,0 +1,20 @@
+{% extends "common.html" %}
+{% block title %}Blog Post{% endblock title %}
+
+{% block content %}
+   
+
+      <div class="container col-md-4 border border-primary py-2 my-5 ">
+        <h3 class="text-center">Recipe List</h3>
+        <form action="{% url 'signIn' %}" method="POST"> 
+          {% csrf_token %}
+            <input type="text" placeholder="title" class="form-control mb-2" name="title">
+            <textarea name="description" id="" placeholder="Description" class="form-control mb-2"></textarea>
+            
+            <button type="submit" class="btn btn-primary w-100"> Send</button>
+        </form>
+    </div>
+    <p><marquee>Click on Recipes on your dash board to view your added recipes</marquee></p>
+
+
+    {% endblock content %}

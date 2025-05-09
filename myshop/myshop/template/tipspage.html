@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Blog - TastyDiary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="{% static "images\get an american popular food image.png" %}" alt="Logo" width="32" height="30" class="me-2">
+                TastyDiary
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-info text-white text-center py-5">
+        <h1>Welcome to TastyDiary</h1>
+        <p class="lead">Discover delicious recipes, food tips, and kitchen hacks!</p>
+    </header>
+
+    <section class="container my-5">
+        <h2 class="mb-4">Tips and Kitchen Hacks</h2>
+        <div class="row g-4">
+            <!-- Tip 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static "images\garlic.jpg" %}" class="card-img-top" alt="Peeling Garlic">
+                    <div class="card-body">
+                        <h5 class="card-title">Easy Garlic Peeling</h5>
+                        <p class="card-text">Soak garlic cloves in warm water for 10 minutes. The skin comes off easily without sticky fingers!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tip 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static "images\herbs.jpg" %}" class="card-img-top" alt="Fresh Herbs">
+                    <div class="card-body">
+                        <h5 class="card-title">Keep Herbs Fresh</h5>
+                        <p class="card-text">Wrap fresh herbs in a damp paper towel and store them in a zip-lock bag in the fridge.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="{% static "images\knife.jpg" %}" class="card-img-top" alt="Sharpen Knife">
+                    <div class="card-body">
+                        <h5 class="card-title">DIY Knife Sharpener</h5>
+                        <p class="card-text">No sharpener? Use the bottom of a ceramic mug to sharpen your kitchen knife in a pinch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        &copy; 2025 TastyDiary | All Rights Reserved
+    </footer>
+
+    <!-- Bootstrap JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

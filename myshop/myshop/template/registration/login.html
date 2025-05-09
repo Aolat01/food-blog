@@ -1,0 +1,21 @@
+{% extends "common.html" %}
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="col-md-4 bg-light p-4 rounded shadow">
+        <h2 class="text-center mb-4">Login</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- You can change to form.as_table or customize fields manually -->
+
+            <div class="d-grid mt-3">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            <a href="{% url "password_reset" %}" class="text-black">Forgot password</a>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
